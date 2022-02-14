@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {Line,Bar} from 'react-chartjs-2';
-import { fetchChart } from '../API';
+import { fetchChart } from '../../API';
 import './Chart.css';
 import {
     Chart as ChartJS,

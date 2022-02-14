@@ -24,4 +24,17 @@ export const fetchChart =async()=>{
     }catch(error){
         console.log(error);
     }
+};
+
+export const Countries =async()=>{
+    try{
+        const {data : {countries}} = await axios.get(`${url}/countries`);
+        console.log(countries)
+       // const x = countries.map(country=>{
+
+        //})
+        return countries;
+    }catch(error){
+        console.log(error);
+    }
 }
