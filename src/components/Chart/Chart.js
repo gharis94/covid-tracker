@@ -1,7 +1,8 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import {Line,Bar} from 'react-chartjs-2';
-import { fetchChart } from '../../API';
+//import { fetchChart } from '../../API';
 import './Chart.css';
+import { GlobaolContext } from '../../contex/GlobalState';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -22,14 +23,15 @@ ChartJS.register(
     Legend
 );
 const Chart =()=>{
-    const [dailyData,setDailyData]=useState([]);
+    const {dailyData}=useContext(GlobaolContext) 
+    //const [dailyData,setDailyData]=useState([]);
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         const fetchData=async()=>{
             setDailyData(await fetchChart())   
         };
         fetchData();
-    },[])
+    },[])*/
 
     const LineChart = (
         dailyData.length ? (
